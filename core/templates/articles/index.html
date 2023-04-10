@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+</head>
+<body>
+    Posts:
+    {% if latest_articles_list %}
+    <ul>
+    {% for article in latest_articles_list.all %}
+        <li><a href="{% url 'core:read_article' article.id %}">{{ article.title }}</a></li>
+    {% endfor %}
+    </ul>
+    <a href="{% url 'core:create_article' %}"><button>Create article</button></a>
+    {% else %}
+    <p>No posts are available.</p>
+    <p>No posts!</p>
+    {% endif %}
+</body>
+</html>
