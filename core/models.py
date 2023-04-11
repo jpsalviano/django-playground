@@ -6,7 +6,6 @@ from django.contrib.auth.models import User
 
 
 class Article(models.Model):
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=50)
     text = models.CharField(max_length=5000)
     created_at = models.DateTimeField(auto_now_add=True)

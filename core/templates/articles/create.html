@@ -10,8 +10,9 @@
   <h1> Create article</h1>
     <form action="{% url 'core:create_article' %}" method="post">
       {% csrf_token %}
-      {{ form }}
+      {{ form.as_table }}
       <input type="submit" value="Submit">
     </form>
+    
 </body>
 </html>
